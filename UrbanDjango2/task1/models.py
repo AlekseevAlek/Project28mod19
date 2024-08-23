@@ -6,16 +6,16 @@ class Buyer(models.Model):
     balance = models.DecimalField(max_digits=10, decimal_places=2)
     age = models.IntegerField()
 
-    def __init__(self):
+    def __str__(self):
         return self.name
 
 class Game(models.Model):
     title = models.CharField(max_length=200)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
-    size = models.DecimalField(max_digits=10,decimal_places=2)
+    size = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
     age_limited = models.BooleanField(default=False)
     buyer = models.ManyToManyField(Buyer)
 
-    def __init__(self):
-        return self.name
+    def __str__(self):
+        return self.title
